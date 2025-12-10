@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda de Móveis</title>
+</head>
+<body>
+    <header>
+<!-- Produto 4 -->
+<article class="product">
+<img class="thumb" src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Estante" />
+<div>
+<div class="meta">
+<div>
+<div style="font-weight:700">Estante Modular</div>
+<div class="desc">Várias posições. Montagem fácil. Madeira e metal.</div>
+</div>
+<div style="text-align:right">
+<div class="price">R$ 499</div>
+</div>
+</div>
+</div>
+<div class="actions">
+<button class="btn buy" onclick="openModal('Estante Modular', 'R$ 499')">Comprar</button>
+<button class="btn info" onclick="alert('Altura: 180cm. Prateleiras ajustáveis.')">Detalhes</button>
+</div>
+</article>
+
+
+</div>
+</section>
+
+
+<aside class="sidebar">
+<div class="contact" id="contato">
+<h3>Contato rápido</h3>
+<p style="margin:6px 0 0 0;color:var(--muted);font-size:14px">Preencha e responderemos em até 24h.</p>
+<form onsubmit="submitContact(event)">
+<label for="name">Nome</label>
+<input id="name" name="name" required />
+<label for="email">Email</label>
+<input id="email" type="email" name="email" required />
+<label for="message">Mensagem</label>
+<textarea id="message" name="message" rows="4" required></textarea>
+<button type="submit">Enviar mensagem</button>
+</form>
+<hr style="margin:12px 0;border:none;border-top:1px solid #f1f5f9" />
+<div style="font-size:14px;color:var(--muted)">
+<div><strong>Loja:</strong> Rua Exemplo, 123 — Bairro Modelo</div>
+<div><strong>Telefone:</strong> (11) 99999-9999</div>
+<div style="margin-top:6px"><a href="mailto:contato@casamoveis.com">contato@casamoveis.com</a></div>
+</div>
+</div>
+
+
+<div style="height:18px"></div>
+
+
+<div class="contact">
+<h3>Sobre nós</h3>
+<p class="desc">Pequena loja familiar com peças selecionadas e garantia de 30 dias contra defeitos não causados por mau uso.</p>
+</div>
+</aside>
+</div>
+</main>
+
+
+<footer>
+<div>© <span id="year"></span> Casa Móveis — Todos os direitos reservados</div>
+<div style="font-size:13px;color:var(--muted)">Pagamento: Transferência, Pix ou retirada</div>
+</footer>
+</body>
+</html>

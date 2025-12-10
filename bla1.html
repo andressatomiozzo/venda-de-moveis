@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Casa Móveis — Venda de Móveis</title>
+  <meta name="description" content="Peças selecionadas de móveis à venda — sofá, mesa, cadeira e estante. Contato rápido e checkout simples." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset simples */
+    :root{
+      --bg:#f7f8fa;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#0f172a;
+      --primary:#0ea5a4;
+      --shadow: 0 6px 20px rgba(15,23,42,0.08);
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#ffffff);
+      color:var(--accent);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+    }
+
+    header{
+      background:transparent;
+      padding:24px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--primary),#06b6d4);
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:700
+    }
+    .brand h1{font-size:18px;margin:0}
+    nav a{margin-left:16px;color:var(--muted);text-decoration:none}
+
+    .hero{
+      max-width:1100px;margin:18px auto;padding:28px 18px;display:flex;gap:28px;align-items:center;
+    }
+    .hero-card{flex:1;background:var(--card);padding:20px;border-radius:12px;box-shadow:var(--shadow)}
+    .hero h2{margin:0 0 8px 0;font-size:22px}
+    .hero p{margin:0;color:var(--muted)}
+    .cta{margin-top:14px;display:inline-block;background:var(--primary);color:white;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600}
+
+    .catalog{max-width:1100px;margin:18px auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;padding:18px}
+    .product{
+      background:var(--card);border-radius:12px;padding:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px
+    }
+    .thumb{
+      width:100%;height:180px;border-radius:8px;display:block;object-fit:cover;background:#eef2f7;align-self:center
+    }
+    .meta{display:flex;justify-content:space-between;align-items:center}
+    .price{font-weight:700}
+    .badge{background:#fde68a;color:#7c2d12;padding:6px 8px;border-radius:8px;font-size:12px}
+    .desc{color:var(--muted);font-size:14px}
+    .actions{display:flex;gap:8px}
+    .btn{flex:1;padding:10px 12px;border-radius:10px;border:0;font-weight:600;cursor:pointer}
+    .btn.buy{background:#06b6d4;color:white}
+    .btn.info{background:transparent;border:1px solid #e6eef0;color:var(--accent)}
+
+    footer{max-width:1100px;margin:22px auto;padding:18px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* formulário de contato simples */
+    .sidebar{min-width:320px}
+    .contact{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+    .contact label{display:block;margin-top:8px;font-size:13px}
+    .contact input,.contact textarea{width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid #e6eef0}
+    .contact button{margin-top:12px;background:var(--primary);color:white;padding:10px 12px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+
+    /* grid principal para hero e sidebar em telas maiores */
+    .layout{max-width:1100px;margin:6px auto;display:grid;grid-template-columns:1fr 360px;gap:18px;padding:18px}
+
+    @media(max-width:880px){
+      .layout{grid-template-columns:1fr}
+      .hero{flex-direction:column}
+      .thumb{height:160px}
+    }
+
+    /* pequenas melhorias de acessibilidade */
+    a:focus, button:focus, input:focus, textarea:focus{outline:3px solid rgba(6,182,180,0.18);outline-offset:2px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">CM</div>
+      <div>
+        <h1>Casa Móveis</h1>
+        <div style="font-size:12px;color:var(--muted)">Móveis selecionados • Entrega rápida</div>
+      </div>
+    </div>
+    <nav aria-label="menu principal">
+      <a href="#catalog">Produtos</a>
+      <a href="#contato">Contato</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-card">
+        <h2>Peças em destaque — qualidade e preço justo</h2>
+        <p>Confira nossa seleção de móveis usados e novos. Fotos reais, descrição honesta e entrega para sua cidade.</p>
+        <a class="cta" href="#catalog">Ver catálogo</a>
+      </div>
+      <div class="hero-card">
+        <h3>Promoção da semana</h3>
+        <p style="margin:6px 0 0 0" class="desc">Sofá 3 lugares com 20% de desconto — só enquanto durar o estoque.</p>
+        <div style="margin-top:12px;font-size:14px"><span class="badge">Frete grátis em capitais</span></div>
+      </div>
+    </section>
+
+    <div class="layout">
+      <section>
+        <h2 id="catalog" style="margin:6px 18px">Catálogo</h2>
+        <div class="catalog">
+          <!-- Produto 1 -->
+          <article class="product">
+            <img class="thumb" src="https://images.unsplash.com/photo-1549187774-b4e9b0445b6b?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Sofá 3 lugares" />
+            <div>
+              <div class="meta">
+                <div>
+                  <div style="font-weight:700">Sofá 3 lugares — Conforto</div>
+                  <div class="desc">Estofado em tecido cinza. Pouco uso, sem manchas.</div>
+                </div>
+                <div style="text-align:right">
+                  <div class="price">R$ 1.499</div>
+                  <div class="badge">20% off</div>
+                </div>
+              </div>
+            </div>
+            <div class="actions">
+              <button class="btn buy" onclick="openModal('Sofá 3 lugares', 'R$ 1.499')">Comprar</button>
+              <button class="btn info" onclick="alert('Mais detalhes: Sofá 210cm x 90cm. Retirada na loja ou entregamos.')">Detalhes</button>
+            </div>
+          </article>
+
+          <!-- Produto 2 -->
+          <article class="product">
+            <img class="thumb" src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Mesa de Jantar" />
+            <div>
+              <div class="meta">
+                <div>
+                  <div style="font-weight:700">Mesa de Jantar — 6 lugares</div>
+                  <div class="desc">Madeira maciça, acabamento natural. Pequenos sinais de uso.</div>
+                </div>
+                <div style="text-align:right">
+                  <div class="price">R$ 899</div>
+                </div>
+              </div>
+            </div>
+            <div class="actions">
+              <button class="btn buy" onclick="openModal('Mesa de Jantar 6 lugares', 'R$ 899')">Comprar</button>
+              <button class="btn info" onclick="alert('Dimensões: 180x90 cm. Acompanhada de 6 cadeiras.')">Detalhes</button>
+            </div>
+          </article>
+
+          <!-- Produto 3 -->
+          <article class="product">
+            <img class="thumb" src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Cadeira de escritório" />
+            <div>
+              <div class="meta">
+                <div>
+                  <div style="font-weight:700">Cadeira Office — Ergonômica</div>
+                  <div class="desc">Apoio lombar, regulagens. Excelente estado.</div>
+                </div>
+                <div style="text-align:right">
+                  <div class="price">R$ 259</div>
+                </div>
+              </div>
+            </div>
+            <div class="actions">
+              <button class="btn buy" onclick="openModal('Cadeira Office', 'R$ 259')">Comprar</button>
+              <button class="btn info" onclick="alert('Ideal para home-office. Rodízios novos.')">Detalhes</button>
+            </div>
+          </article>
+
+          <!-- Produto 4 -->
+          <article class="product">
+            <img class="thumb" src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Estante" />
+            <div>
+              <div class="meta">
+                <div>
+                  <div style="font-weight:700">Estante Modular</div>
+                  <div class="desc">Várias posições. Montagem fácil. Madeira e metal.</div>
+                </div>
+                <div style="text-align:right">
+                  <div class="price">R$ 499</div>
+                </div>
+              </div>
+            </div>
+            <div class="actions">
+              <button class="btn buy" onclick="openModal('Estante Modular', 'R$ 499')">Comprar</button>
+              <button class="btn info" onclick="alert('Altura: 180cm. Prateleiras ajustáveis.')">Detalhes</button>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="contact" id="contato">
+          <h3>Contato rápido</h3>
+          <p style="margin:6px 0 0 0;color:var(--muted);font-size:14px">Preencha e responderemos em até 24h.</p>
+          <form onsubmit="submitContact(event)">
+            <label for="name">Nome</label>
+            <input id="name" name="name" required />
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required />
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Enviar mensagem</button>
+          </form>
+          <hr style="margin:12px 0;border:none;border-top:1px solid #f1f5f9" />
+          <div style="font-size:14px;color:var(--muted)">
+            <div><strong>Loja:</strong> Rua Exemplo, 123 — Bairro Modelo</div>
+            <div><strong>Telefone:</strong> (11) 99999-9999</div>
+            <div style="margin-top:6px"><a href="mailto:contato@casamoveis.com">contato@casamoveis.com</a></div>
+          </div>
+        </div>
+
+        <div style="height:18px"></div>
+
+        <div class="contact">
+          <h3>Sobre nós</h3>
+          <p class="desc">Pequena loja familiar com peças selecionadas e garantia de 30 dias contra defeitos não causados por mau uso.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> Casa Móveis — Todos os direitos reservados</div>
+    <div style="font-size:13px;color:var(--muted)">Pagamento: Transferência, Pix ou retirada</div>
+  </footer>
+
+  <script>
+    // Atualiza o ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Função simples de "comprar" — abre diálogo com pedido pré-preenchido
+    function openModal(item, price){
+      const body = encodeURIComponent(`Olá! Tenho interesse no produto: ${item} — ${price}. \nNome: \nTelefone: \nEndereço (se desejar entrega):`);
+      // usa WhatsApp web/telefone fictício — substitua pelo número real
+      const whatsapp = '5511999999999';
+      if(confirm(`Deseja abrir o pedido via WhatsApp para confirmar a compra de ${item} por ${price}?`)){
+        window.open(`https://wa.me/${whatsapp}?text=${body}`,'_blank');
+      }
+    }
+
+    // Simula envio do formulário (não há backend) — demonstração
+    function submitContact(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      alert('Obrigado, ' + name + '! Sua mensagem foi registrada.\nVamos responder em até 24h no email ' + email + '.');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
